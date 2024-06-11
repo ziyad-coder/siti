@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish Messages</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .morning {
+            background-color: #4CAF50;
+        }
+        .goodluck {
+            background-color: #2196F3;
+        }
+        .love {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <button class="button morning" onclick="sendMessage('Good Morning!')">Wish Morning</button>
+    <button class="button goodluck" onclick="sendMessage('Goodluck for your presentation!')">Wish Goodluck for Presentation</button>
+    <button class="button love" onclick="sendMessage('I love you!')">Wish I Love You</button>
+
+    <script>
+        function sendMessage(message) {
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
